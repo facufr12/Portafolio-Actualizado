@@ -4,13 +4,33 @@ import "./App.css";
 import { MeteorsDemo } from "./components/meteorsdemo";
 import linkedin from "./assets/linkedin.png";
 import { NavbarDemo } from "./components/navbardemo";
-
+import DownloadIcon from "./assets/svgdownload.svg";
+import HoverBorderGradientDemo from "./components/hoverborderDemo";
+import Projects from "./components/projects";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Contact from "./components/contact"
+import Meteorskills from "./components/meteorsskills"
+import Navbarnueva from "./components/Navbarnueva";
+import { LayoutGridDemo } from "./components/layoutgriddemo";
+import { AnimatedTooltipPreview } from "./components/tooltipdemo.tsx";
+import { WobbleCardDemo}  from "./components/woobledemo.tsx";
 function App() {
   return (
-    <div className="flex items-center justify-center h-screen">
+    <div className=" items-center justify-center h-screen">
       <div>
-        <NavbarDemo />
-        <MeteorsDemo />
+            
+        <Router>
+          
+        <Navbarnueva />
+          <Routes>
+            
+            <Route path="/" element={<MeteorsDemo />} >  </Route>
+
+            <Route path="/projects" element={<LayoutGridDemo/>}> </Route>
+            
+            <Route path="/contact" element={<Contact/>}> </Route>
+          </Routes>
+        </Router>
       </div>
     </div>
   );

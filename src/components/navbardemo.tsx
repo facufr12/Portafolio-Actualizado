@@ -1,16 +1,34 @@
-"use client";
+import linkedin from "../assets/linkedin.png";
+import whatsapp from "../assets/whatsapp.png";
+import github from "../assets/github.png";
+import Geosystems from "../assets/Geosystems.png";
+import letraf from "../assets/letraf.jpeg";
+import Generadordeimagenes from "../assets/Generadordeimagenes.png";
+import Rickandmorty from "../assets/Rickandmorty.png";
 import React, { useState } from "react";
-import { HoveredLink, Menu, MenuItem, ProductItem } from "../components/navbar-menu";
+import Projects from "./projects"
+import { NavLink, BrowserRouter as Router, Route, Routes, Link} from 'react-router-dom';
+import Contact from "./contact";
+
+import {
+  HoveredLink,
+  Menu,
+  MenuItem,
+  ProductItem,
+} from "../components/navbar-menu";
 import { cn } from "../lib/utils";
 
 export function NavbarDemo() {
   return (
-    <div className="relative w-full flex items-center justify-center ">
+    <div className="relative w-full flex items-center justify-center">
+    <div className="absolute top-0 right-5 mt-10 ">
       <Navbar className="top-2" />
-      <p className="text-black dark:text-white">
-        The Navbar will show on top of the page
-      </p>
     </div>
+  </div>
+  
+
+  
+
   );
 }
 
@@ -23,46 +41,50 @@ function Navbar({ className }: { className?: string }) {
       <Menu setActive={setActive}>
         <MenuItem setActive={setActive} active={active} item="Services">
           <div className="flex flex-col space-y-4 text-sm">
+         
             <HoveredLink href="/web-dev">Web Development</HoveredLink>
             <HoveredLink href="/interface-design">Interface Design</HoveredLink>
             <HoveredLink href="/seo">Search Engine Optimization</HoveredLink>
             <HoveredLink href="/branding">Branding</HoveredLink>
           </div>
         </MenuItem>
-        <MenuItem setActive={setActive} active={active} item="Products">
-          <div className="  text-sm grid grid-cols-2 gap-10 p-4">
-            <ProductItem
-              title="Algochurn"
-              href="https://algochurn.com"
-              src="https://assets.aceternity.com/demos/algochurn.webp"
-              description="Prepare for tech interviews like never before."
-            />
-            <ProductItem
-              title="Tailwind Master Kit"
-              href="https://tailwindmasterkit.com"
-              src="https://assets.aceternity.com/demos/tailwindmasterkit.webp"
-              description="Production ready Tailwind css components for your next project"
-            />
-            <ProductItem
-              title="Moonbeam"
-              href="https://gomoonbeam.com"
-              src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.51.31%E2%80%AFPM.png"
-              description="Never write from scratch again. Go from idea to blog in minutes."
-            />
-            <ProductItem
-              title="Rogue"
-              href="https://userogue.com"
-              src="https://assets.aceternity.com/demos/Screenshot+2024-02-21+at+11.47.07%E2%80%AFPM.png"
-              description="Respond to government RFPs, RFIs and RFQs 10x faster using AI"
-            />
+
+        <MenuItem setActive={setActive} active={active} item="Contact">
+       
+        
+          <div className="flex flex-col space-y-4 text-sm">
+            <HoveredLink href="https://www.linkedin.com/in/facundofierro-frontend/">
+              <img src={linkedin} className="w-9" alt="" />
+            </HoveredLink>
+
+            <HoveredLink href="https://wa.me/541125315884">
+              <img src={whatsapp} className="w-9" alt="" />
+            </HoveredLink>
+            <HoveredLink href="https://github.com/facufr12">
+              <img src={github} className="w-9" alt="" />
+            </HoveredLink>
           </div>
         </MenuItem>
-        <MenuItem setActive={setActive} active={active} item="Pricing">
-          <div className="flex flex-col space-y-4 text-sm">
-            <HoveredLink href="/hobby">Hobby</HoveredLink>
-            <HoveredLink href="/individual">Individual</HoveredLink>
-            <HoveredLink href="/team">Team</HoveredLink>
-            <HoveredLink href="/enterprise">Enterprise</HoveredLink>
+        <MenuItem  setActive={setActive} active={active} item="Projects">
+          <div className="  text-sm grid grid-cols-2 gap-10 p-4">
+            <ProductItem
+              title="Rick and Morty app"
+              href="https://rickandmortyremaster-facufrs-projects.vercel.app/"
+              src={Rickandmorty}
+              description="Consumption of the Rick and Morty API using React and styled with Bootstrap."
+            />
+            <ProductItem
+              title="IA Generator"
+              href="https://imagen-generator-seven.vercel.app/"
+              src={Generadordeimagenes}
+              description="Consumption of the OpenAI API, made in React and styled with Tailwind."
+            />
+            <ProductItem
+              title="Geosystems"
+              href="https://entrevista-tecnica-geosysytems.vercel.app/"
+              src={Geosystems}
+              description="Geosystems Services Sales Page."
+            />
           </div>
         </MenuItem>
       </Menu>
