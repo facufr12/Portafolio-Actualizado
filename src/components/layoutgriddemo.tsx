@@ -6,7 +6,6 @@ import image3 from "../assets/Geosystems.png"
 export function LayoutGridDemo() {
   return (
     <div className="h-screen py-20 w-full">
-    <h1 className="text-4xl font-bold text-center text-gray-100 mb-8">Projects</h1>
     <LayoutGrid cards={cards} />
   </div>
   

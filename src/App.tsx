@@ -8,27 +8,32 @@ import DownloadIcon from "./assets/svgdownload.svg";
 import HoverBorderGradientDemo from "./components/hoverborderDemo";
 import Projects from "./components/projects";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Contact from "./components/contact"
-import Meteorskills from "./components/meteorsskills"
+import Contact from "./components/contact";
+import FocusCardsDemo from "./components/focuscardemo.tsx";
+import Meteorskills from "./components/meteorsskills";
 import Navbarnueva from "./components/Navbarnueva";
+import { LensDemoSecond } from "./components/lensdemo.tsx";
 import { LayoutGridDemo } from "./components/layoutgriddemo";
 import { AnimatedTooltipPreview } from "./components/tooltipdemo.tsx";
-import { WobbleCardDemo}  from "./components/woobledemo.tsx";
+import { WobbleCardDemo } from "./components/woobledemo.tsx";
 function App() {
   return (
     <div className=" items-center justify-center h-screen">
       <div>
-            
         <Router>
-          
-        <Navbarnueva />
+          <Navbarnueva />
           <Routes>
-            
-            <Route path="/" element={<MeteorsDemo />} >  </Route>
+            <Route path="/" element={<MeteorsDemo />}>
+              {" "}
+            </Route>
 
-            <Route path="/projects" element={<LayoutGridDemo/>}> </Route>
-            
-            <Route path="/contact" element={<Contact/>}> </Route>
+            <Route path="/projects" element={<FocusCardsDemo />}>
+              {" "}
+            </Route>
+
+            <Route path="/contact" element={<Contact />}>
+              {" "}
+            </Route>
           </Routes>
         </Router>
       </div>

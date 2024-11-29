@@ -7,10 +7,12 @@ export const WobbleCard = ({
   children,
   containerClassName,
   className,
+  image, // nueva propiedad para la imagen personalizada
 }: {
   children: React.ReactNode;
   containerClassName?: string;
   className?: string;
+  image?: string; // tipo de la propiedad image
 }) => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
@@ -22,6 +24,7 @@ export const WobbleCard = ({
     const y = (clientY - (rect.top + rect.height / 2)) / 20;
     setMousePosition({ x, y });
   };
+
   return (
     <motion.section
       onMouseMove={handleMouseMove}
@@ -57,7 +60,9 @@ export const WobbleCard = ({
           }}
           className={cn("h-full px-4 py-20 sm:px-10", className)}
         >
-          <Noise1 />
+          {image && (
+            <Noise image={image} /> // pasa la propiedad image al componente Noise
+          )}
           {children}
         </motion.div>
       </div>
@@ -65,39 +70,14 @@ export const WobbleCard = ({
   );
 };
 
-const Noise1 = () => {
+const Noise = ({ image }: { image: string }) => {
   return (
     <div
       className="absolute inset-0 w-full h-full scale-[1.2] transform opacity-10 [mask-image:radial-gradient(#fff,transparent,75%)]"
       style={{
-        backgroundImage: "url(/linkedin.png)",
+        backgroundImage: `url(${image})`, // utiliza la propiedad image para establecer la imagen de fondo
         backgroundSize: "30%",
       }}
     ></div>
   );
 };
-
-const Noise2 = () => {
-    return (
-      <div
-        className="absolute inset-0 w-full h-full scale-[1.2] transform opacity-10 [mask-image:radial-gradient(#fff,transparent,75%)]"
-        style={{
-          backgroundImage: "url(/whatsapp.png)",
-          backgroundSize: "30%",
-        }}
-      ></div>
-    );
-  };
-  
-  const Noise3 = () => {
-    return (
-      <div
-        className="absolute inset-0 w-full h-full scale-[1.2] transform opacity-10 [mask-image:radial-gradient(#fff,transparent,75%)]"
-        style={{
-          backgroundImage: "url(/github.png)",
-          backgroundSize: "30%",
-        }}
-      ></div>
-    );
-  };
-  
