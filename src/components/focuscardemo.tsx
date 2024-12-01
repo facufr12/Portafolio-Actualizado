@@ -3,8 +3,8 @@ import { FocusCards } from "./focus-cards";
 export default function FocusCardsDemo() {
   const cards = [
     {
-      title: "Rick and Morty",
-      src: "/Rickandmorty.png",
+      title: "Rick and Morty App",
+      src: "/Rickandmorty.webp",
       href: "https://www.github.com/rickandmorty", // Add href property to each card
     },
     {
@@ -13,9 +13,9 @@ export default function FocusCardsDemo() {
       href: "https://www.valleyoflife.com", // Add href property to each card
     },
     {
-      title: "Sala behta hi jayega",
-      src: "https://images.unsplash.com/photo-1505142468610-359e7d316be0?q=80&w=3070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      href: "https://www.salahbehtahijayega.com", // Add href property to each card
+      title: "Calculadora,sincronizada con Google Sheets",
+      src: "/calculadora.webp",
+      href: "https://calculadora-scoring-bajas.netlify.app/", // Add href property to each card
     },
     {
       title: "Camping is for pros",
